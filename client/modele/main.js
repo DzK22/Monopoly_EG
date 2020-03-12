@@ -48,11 +48,6 @@ function getRenderer() {
 function loaderObject(load, test, i){
   load.load('/plateau/'+test+'.gltf', (gltf) => {
     const root = gltf.scene;
-    //var num = i;
-    window.te = gltf.scene;
-    /*var te = "case"+num;
-    window.te = gltf.scene;*/
-    //console.log(te);
     scene.add(root);
     const box = new THREE.Box3().setFromObject(root);
     const boxSize = box.getSize(new THREE.Vector3()).length();
@@ -60,15 +55,15 @@ function loaderObject(load, test, i){
   });
 }
 
-var blenderObject = ['case1', 'case2', 'case3', 'case4', 'case5', 'case6', 'case7', 'case8', 'case9',
+var blenderObject = ['case0', 'case1', 'case2', 'case3', 'case4', 'case5', 'case6', 'case7', 'case8', 'case9',
                       'case10', 'case11', 'case12', 'case13', 'case14', 'case15', 'case16', 'case17',
                       'case18', 'case19', 'case20', 'case21', 'case22', 'case23', 'case24', 'case25',
                       'case26', 'case27', 'case28', 'case29', 'case30', 'case31', 'case32', 'case33',
-                      'case34', 'case35', 'case36', 'coins', 'collections', 'eau', 'egout', 'orangerie',
+                      'case34', 'case35', 'case36', 'case37', 'case38', 'case39', 'collections', 'eau', 'egout', 'orangerie',
                       'maison', 'parlement', 'pont', 'rail', 'route', 'tram', 'campus', 'cascade'];
 
 
-for(var i = 0; i < 49; i++){
+for(var i = 0; i < 52; i++){
   var loader = "loader"+i;
   var objVar = blenderObject[i];
   var loader = new THREE.GLTFLoader();
@@ -84,23 +79,6 @@ loaderHotel.load('/hotel/hotel.gltf', (gltf) => {
   const boxSize = box.getSize(new THREE.Vector3()).length();
   const boxCenter = box.getCenter(new THREE.Vector3());
 });
-/*
-var loaderMoto = new THREE.GLTFLoader();
-loaderMoto.load( 'Pions/pionEchelle/moto.gltf', (gltf) => {
-  const root = gltf.scene;
-  window.pionMoto = gltf.scene;
-  root.rotateY(-90*Math.PI/180);
-  root.position.set(3.8,2,3.85);
-  scene.add(root);
-  scene.updateMatrixWorld(true);
-  var position = new THREE.Vector3();
-  position.setFromMatrixPosition( root.matrixWorld );
-  //alert("Position de la moto: " + position.x + ', ' + position.y + ', ' + position.z);
-  const box = new THREE.Box3().setFromObject(root);
-  const boxSize = box.getSize(new THREE.Vector3()).length();
-  const boxCenter = box.getCenter(new THREE.Vector3());
-});*/
-
 
 var loaderCitroen = new THREE.GLTFLoader();
 loaderCitroen.load('Pions/pionEchelle/citroen\ C4.gltf', (gltf) => {
@@ -119,88 +97,18 @@ loaderCitroen.load('Pions/pionEchelle/citroen\ C4.gltf', (gltf) => {
 });
 
 
-var loaderMaisonBasGauche = new THREE.GLTFLoader();
-loaderMaisonBasGauche.load('Pions/pionEchelle/moto.gltf', (gltf) => {
-  const root = gltf.scene;
-  window.maisonBasGauche = gltf.scene;
-  root.position.set(0.335*1, 2, 0.335*11.5);
-  root.rotateY(3);
-  scene.add(root);
-  const box = new THREE.Box3().setFromObject(root);
-  const boxSize = box.getSize(new THREE.Vector3()).length();
-  const boxCenter = box.getCenter(new THREE.Vector3());
-  scene.updateMatrixWorld(true);
-  var position = new THREE.Vector3();
-  position.setFromMatrixPosition( root.matrixWorld );
-  console.log("Position de la maisonBasGauche: " + position.x + ', ' + position.y + ', ' + position.z);
-});
-
-var loaderMaisonHautGauche = new THREE.GLTFLoader();
-loaderMaisonHautGauche.load('Pions/pionEchelle/moto.gltf', (gltf) => {
-  const root = gltf.scene;
-  window.maisonHautGauche = gltf.scene;
-  root.position.set(0.335*1, 2, 0.335*1); //0.335*11.5, 5.5, 0.335*11.5
-  root.rotateY(1.5);
-  scene.add(root);
-  const box = new THREE.Box3().setFromObject(root);
-  const boxSize = box.getSize(new THREE.Vector3()).length();
-  const boxCenter = box.getCenter(new THREE.Vector3());
-  scene.updateMatrixWorld(true);
-  var position = new THREE.Vector3();
-  position.setFromMatrixPosition( root.matrixWorld );
- console.log("Position de la maisonHautGauche: " + position.x + ', ' + position.y + ', ' + position.z);
-});
-
-var loaderMaisonHautDroite = new THREE.GLTFLoader();
-loaderMaisonHautDroite.load('Pions/pionEchelle/moto.gltf', (gltf) => {
-  const root = gltf.scene;
-  window.maisonHautDroite = gltf.scene;
-  root.position.set(0.335*11.5, 2, 0.335*1);
-  root.rotateY(0);
-  scene.add(root);
-  const box = new THREE.Box3().setFromObject(root);
-  const boxSize = box.getSize(new THREE.Vector3()).length();
-  const boxCenter = box.getCenter(new THREE.Vector3());
-  scene.updateMatrixWorld(true);
-  var position = new THREE.Vector3();
-  position.setFromMatrixPosition( root.matrixWorld );
-  console.log("Position de la maisonHautDroite: " + position.x + ', ' + position.y + ', ' + position.z);
-});
-
-var loaderMaisonBasDroite = new THREE.GLTFLoader();
-loaderMaisonBasDroite.load('Pions/pionEchelle/moto.gltf', (gltf) => {
-  const root = gltf.scene;
-  window.maisonBasDroite = gltf.scene;
-  root.position.set(0.335*11.5,2,0.335*11.5);
-  root.rotateY(-1.5);
-  scene.add(root);
-  const box = new THREE.Box3().setFromObject(root);
-  const boxSize = box.getSize(new THREE.Vector3()).length();
-  const boxCenter = box.getCenter(new THREE.Vector3());
-  scene.updateMatrixWorld(true);
-  var position = new THREE.Vector3();
-  position.setFromMatrixPosition( root.matrixWorld );
-  console.log("Position de la maisonBasDroite: " + position.x + ', ' + position.y + ', ' + position.z);
-});
-
-
 var compteurDeplacement = 0;
 function deplacement(){
   if(compteurDeplacement === 0){
-    /*console.log("Position de la voiture: " + pionCitroen.position.x + ', ' + pionCitroen.position.y + ', ' + pionCitroen.position.z);
-    console.log("Position de la maisongauchebas: " + maisonBasGauche.position.x + ', ' + maisonBasGauche.position.y + ', ' + maisonBasGauche.position.z);
-    console.log("Position de la maisonhautegauche: " + maisonHautGauche.position.x + ', ' + maisonHautGauche.position.y + ', ' + maisonHautGauche.position.z);
-    console.log("Position de la maisonhautedroite: " + maisonHautDroite.position.x + ', ' + maisonHautDroite.position.y + ', ' + maisonHautDroite.position.z);
-    */
-   compteurDeplacement = 1;
+    compteurDeplacement = 1;
   }
 
   // Route d'en-bas (vers la gauche)
-  if((Math.floor(maisonBasGauche.position.y * 100) / 100) == (Math.floor(pionCitroen.position.y * 100) / 100) && (Math.floor(maisonBasGauche.position.z * 100) / 100) == (Math.floor(pionCitroen.position.z * 100) / 100) && compteurDeplacement === 1) {
+  if((Math.floor(tabCases.case10.y * 100) / 100) == (Math.floor(pionCitroen.position.y * 100) / 100) && (Math.floor(tabCases.case10.z * 100) / 100) == (Math.floor(pionCitroen.position.z * 100) / 100) && compteurDeplacement === 1) {
     pionCitroen.position.x -= 0.01;
   }
 
-  if(compteurDeplacement === 1 && ((Math.floor(maisonBasGauche.position.x * 100) / 100) == (Math.floor(pionCitroen.position.x * 100) / 100)) && ((Math.floor(maisonBasGauche.position.z * 100) / 100) == (Math.floor(pionCitroen.position.z * 100) / 100)))
+  /*if(compteurDeplacement === 1 && ((Math.floor(maisonBasGauche.position.x * 100) / 100) == (Math.floor(pionCitroen.position.x * 100) / 100)) && ((Math.floor(maisonBasGauche.position.z * 100) / 100) == (Math.floor(pionCitroen.position.z * 100) / 100)))
   {
     console.log('------');
     console.log("Maisongauchebas: " + (Math.floor(maisonBasGauche.position.x * 100) / 100) + ', ' + (Math.floor(maisonBasGauche.position.y * 100) / 100) + ', ' + (Math.floor(maisonBasGauche.position.z * 100) / 100));
@@ -208,26 +116,44 @@ function deplacement(){
     console.log("Position de la voiture: " + (Math.floor(pionCitroen.position.x * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.y * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.z * 100) / 100));
     compteurDeplacement = 2;
     pionCitroen.rotateY(-1.5);
+  }*/
+
+  if(compteurDeplacement === 1 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(tabCases.case10.x * 100) / 100)){
+    //compteurDeplacement = 0;
+    compteurDeplacement = 2;
+    pionCitroen.rotateY(-1.5);
   }
 
   // Route gauche (vers le haut)
-  if(compteurDeplacement === 2 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(maisonHautGauche.position.x * 100) / 100) && pionCitroen.position.y === maisonHautGauche.position.y && pionCitroen.position.z != maisonHautGauche.position.z){
+  if(compteurDeplacement === 2 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(tabCases.case20.x * 100) / 100) && pionCitroen.position.y === tabCases.case20.y && pionCitroen.position.z != tabCases.case20.z){
     pionCitroen.position.z -= 0.01;
   }
 
-  if(((Math.floor(maisonHautGauche.position.x * 100) / 100) === (Math.floor(pionCitroen.position.x * 100) /100)) && ((Math.floor(maisonHautGauche.position.y * 100) / 100) === (Math.floor(pionCitroen.position.y * 10) /10)) && ((Math.floor(maisonHautGauche.position.z * 100) / 100) === (Math.floor(pionCitroen.position.z * 100) /100))){
+
+  /*if(compteurDeplacement === 4 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(case20.x * 100) / 100) && pionCitroen.position.y === case20.y && pionCitroen.position.z != case20.z){
+    pionCitroen.position.z -= 0.01;
+  }*/
+
+  /*if(((Math.floor(maisonHautGauche.position.x * 100) / 100) === (Math.floor(pionCitroen.position.x * 100) /100)) && ((Math.floor(maisonHautGauche.position.y * 100) / 100) === (Math.floor(pionCitroen.position.y * 10) /10)) && ((Math.floor(maisonHautGauche.position.z * 100) / 100) === (Math.floor(pionCitroen.position.z * 100) /100))){
     console.log('------');
     console.log("Position de la maisonhautegauche: " + (Math.floor(maisonHautGauche.position.x * 100) / 100) + ', ' + (Math.floor(maisonHautGauche.position.y * 100) / 100) + ', ' + (Math.floor(maisonHautGauche.position.z * 100) / 100));
     console.log("Position de la maisonhautdroite: " + (Math.floor(maisonHautDroite.position.x * 100) / 100) + ', ' + (Math.floor(maisonHautDroite.position.y * 100) / 100) + ', ' + (Math.floor(maisonHautDroite.position.z * 100) / 100));
     console.log("Position de la voiture: " + (Math.floor(pionCitroen.position.x * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.y * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.z * 100) / 100));
     compteurDeplacement = 3;
     pionCitroen.rotateY(-1.5);
+  }*/
+
+  if(compteurDeplacement === 2 && (Math.floor(pionCitroen.position.z * 100) / 100) === (Math.floor(tabCases.case20.z * 100) / 100)){
+    //compteurDeplacement = 0;
+    compteurDeplacement = 3;
+    pionCitroen.rotateY(-1.5);
   }
 
-  if(compteurDeplacement === 3 && (Math.floor(pionCitroen.position.x * 100) / 100) != (Math.floor(maisonHautDroite.position.x * 100) / 100) && (Math.floor(pionCitroen.position.y * 100) / 100) === (Math.floor(maisonHautDroite.position.y * 100) / 100) && (Math.floor(pionCitroen.position.z * 100) / 100) === (Math.floor(maisonHautDroite.position.z * 100) / 100)){
+  if(compteurDeplacement === 3 && (Math.floor(pionCitroen.position.x * 100) / 100) != (Math.floor(tabCases.case30.x * 100) / 100) && (Math.floor(pionCitroen.position.y * 100) / 100) === (Math.floor(tabCases.case30.y * 100) / 100) && (Math.floor(pionCitroen.position.z * 100) / 100) === (Math.floor(tabCases.case30.z * 100) / 100)){
     pionCitroen.position.x += 0.01;
   }
 
+  /*
   if(((Math.floor(maisonHautDroite.position.x * 100) / 100) === (Math.floor(pionCitroen.position.x * 100) /100)) && ((Math.floor(maisonHautDroite.position.y * 100) / 100) === (Math.floor(pionCitroen.position.y * 10) /10)) && ((Math.floor(maisonHautDroite.position.z * 100) / 100) === (Math.floor(pionCitroen.position.z * 100) /100))){
     console.log('------');
     console.log("Position de la maisonHautDroite: " + (Math.floor(maisonHautDroite.position.x * 100) / 100) + ', ' + (Math.floor(maisonHautDroite.position.y * 100) / 100) + ', ' + (Math.floor(maisonHautDroite.position.z * 100) / 100));
@@ -235,20 +161,28 @@ function deplacement(){
     console.log("Position de la voiture: " + (Math.floor(pionCitroen.position.x * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.y * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.z * 100) / 100));
     compteurDeplacement = 4;
     pionCitroen.rotateY(-1.5);
-  }
-  
-  if(compteurDeplacement === 4 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(maisonBasDroite.position.x * 100) / 100) && (Math.floor(pionCitroen.position.y * 100) / 100) === (Math.floor(maisonBasDroite.position.y * 100) / 100) && (Math.floor(pionCitroen.position.z * 100) / 100) != (Math.floor(maisonBasDroite.position.z * 100) / 100)){
-    pionCitroen.position.z += 0.01;
+  }*/
+
+  if(compteurDeplacement === 3 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(tabCases.case30.x * 100) / 100)){
+    //compteurDeplacement = 0;
+    compteurDeplacement = 4;
+    pionCitroen.rotateY(-1.5);
+    console.log(pionCitroen.position.x + ', ' + pionCitroen.position.y + ', ' + (Math.floor(pionCitroen.position.z * 100) / 100))
   }
 
-  if(((Math.floor(maisonBasDroite.position.x * 100) / 100) === (Math.floor(pionCitroen.position.x * 100) /100)) && ((Math.floor(maisonBasDroite.position.y * 100) / 100) === (Math.floor(pionCitroen.position.y * 10) /10)) && ((Math.floor(maisonBasDroite.position.z * 100) / 100) === (Math.floor(pionCitroen.position.z * 100) /100))){
-    console.log('------');
-    console.log("Position de la maisonBasGauche: " + (Math.floor(maisonBasGauche.position.x * 100) / 100) + ', ' + (Math.floor(maisonBasGauche.position.y * 100) / 100) + ', ' + (Math.floor(maisonBasGauche.position.z * 100) / 100));
-    console.log("Position de la maisonBasDroite: " + (Math.floor(maisonBasDroite.position.x * 100) / 100) + ', ' + (Math.floor(maisonBasDroite.position.y * 100) / 100) + ', ' + (Math.floor(maisonBasDroite.position.z * 100) / 100));
-    console.log("Position de la voiture: " + (Math.floor(pionCitroen.position.x * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.y * 100) / 100) + ', ' + (Math.floor(pionCitroen.position.z * 100) / 100));
-    compteurDeplacement = 0;
-    pionCitroen.rotateY(-1.8);
-  }
+
+    // Route gauche (vers le haut)
+    if(compteurDeplacement === 4 && (Math.floor(pionCitroen.position.x * 100) / 100) === (Math.floor(tabCases.case0.x * 100) / 100) && pionCitroen.position.y === tabCases.case0.y && pionCitroen.position.z != tabCases.case0.z){
+      pionCitroen.position.z += 0.01;
+    }
+
+  
+    if(compteurDeplacement === 4 && (Math.floor(pionCitroen.position.z * 100) / 100) === (Math.floor(tabCases.case0.z * 100) / 100)){
+      compteurDeplacement = 0;
+      //compteurDeplacement = 3;
+      pionCitroen.rotateY(-1.8);
+    }
+
 }
 
 function ajoutHotel(){
