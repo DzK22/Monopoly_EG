@@ -15,16 +15,16 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "c30",
+            "name" : "a3",
             "scale" : [
                 1.9913179874420166,
                 1.9913179874420166,
                 1.9913179874420166
             ],
             "translation" : [
-                0,
-                -0.014483332633972168,
-                0
+                1.9122626781463623,
+                -0.011670091189444065,
+                -1.627058982849121
             ]
         }
     ],
@@ -36,7 +36,7 @@
                 0,
                 0
             ],
-            "name" : "c2",
+            "name" : "banane",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -49,7 +49,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.046",
+            "name" : "Cube.057",
             "primitives" : [
                 {
                     "attributes" : {
@@ -71,71 +71,71 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "c2",
-            "uri" : "c2.png"
+            "name" : "banane",
+            "uri" : "banane.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 12,
             "max" : [
-                1.015365481376648,
-                0.009190201759338379,
-                -0.2582506835460663
+                0.06073511391878128,
+                0.0053710597567260265,
+                0.05415371060371399
             ],
             "min" : [
-                0.7682535648345947,
-                0.009190201759338379,
-                -0.4199029207229614
+                -0.19752931594848633,
+                -0.007161412853747606,
+                -0.20098361372947693
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 12,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 12,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 6,
+            "count" : 18,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 48,
+            "byteLength" : 144,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 48,
-            "byteOffset" : 48
+            "byteLength" : 144,
+            "byteOffset" : 144
         },
         {
             "buffer" : 0,
-            "byteLength" : 32,
-            "byteOffset" : 96
+            "byteLength" : 96,
+            "byteOffset" : 288
         },
         {
             "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 128
+            "byteLength" : 36,
+            "byteOffset" : 384
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 140,
+            "byteLength" : 420,
             "uri" : "case30.bin"
         }
     ]
