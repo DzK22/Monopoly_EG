@@ -1671,7 +1671,7 @@
     "buffers" : [
         {
             "byteLength" : 850900,
-            "uri" : "boat.gltf.glb.bin"
+            "uri" : "boat.bin"
         }
     ]
 }
