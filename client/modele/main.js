@@ -1,5 +1,5 @@
 loaderPion('citroen C4', () => {
-  deplacement('citroen C4');
+  deplacement('citroen C4', 'case1');
 });
 // loaderPion('montgolfiere', null);
 // loaderPion('citroen C4', null);
