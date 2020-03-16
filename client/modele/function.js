@@ -1,4 +1,4 @@
-let hello, juni;
+let pionActif, varDeplacement;
 
 function getScene() {
 	var scene = new THREE.Scene();
@@ -53,11 +53,12 @@ function getRenderer() {
 function render() {	
 	requestAnimationFrame(render);
 	if(compteurDeplacement > 0 && compteurDeplacement < 5){
-	  deplacement(hello, juni);
+	  deplacement(pionActif, varDeplacement);
 	}
 	renderer.render(scene, camera);
   };
 
+  
 function supprimerMaison(maisonPropriete){
 	scene.remove(window[maisonPropriete]);
 }
@@ -121,7 +122,7 @@ function loaderPion(pion, _callback){
 	  root.rotateY(-1.6);
 	  scene.add(root);
 	  if (_callback){
-		hello = pion;
+		pionActif = pion;
 		_callback();
 	  }
 	});
@@ -146,80 +147,54 @@ function loaderHotelPro(hotelPropriete){
 		scene.add(root);
 	});
 }
-function no(essai){
-	switch(essai){
-		case "case0":
-				return "case0";
-				break;
 
-		case "case1":
-				return "case1";
-				break;
-
-		case "case2":
-				return "case2";
-				break;
-
-		case "case3":
-				return "case3";
-				break;
-
-		case "case4":
-				return "case4";
-				break;
-
-		case "case5":
-			return "case5";
-			break;
-	}
-}
 
 var compteurDeplacement = 0;
-function deplacement(hello, juli){
+function deplacement(pionActif, deplaCase){
 	if(compteurDeplacement === 0){
 		compteurDeplacement = 1;
-		juni = juli;
+		varDeplacement = deplaCase;
 	}
 	//console.log(tabCases["case10"])
 	//console.log(tabCases[no()]);
-	if((Math.floor(tabCases[no(juni)].z * 100) / 100) != (Math.floor(hello.position.z * 100) / 100)
+	if((Math.floor(tabCases[no(varDeplacement)].z * 100) / 100) != (Math.floor(pionActif.position.z * 100) / 100)
 	||
-		(Math.floor(tabCases[no(juni)].x * 100) / 100) != (Math.floor(hello.position.x * 100) / 100))
+		(Math.floor(tabCases[no(varDeplacement)].x * 100) / 100) != (Math.floor(pionActif.position.x * 100) / 100))
 	{
 	// Route d'en-bas (vers la gauche)
-	if((Math.floor(tabCases.case10.z * 100) / 100) == (Math.floor(hello.position.z * 100) / 100) && compteurDeplacement === 1) {
-		hello.position.x -= 0.01;
+	if((Math.floor(tabCases.case10.z * 100) / 100) == (Math.floor(pionActif.position.z * 100) / 100) && compteurDeplacement === 1) {
+		pionActif.position.x -= 0.01;
 	}
 
-	if(compteurDeplacement === 1 && (Math.floor(hello.position.x * 100) / 100) === (Math.floor(tabCases.case10.x * 100) / 100)){
+	if(compteurDeplacement === 1 && (Math.floor(pionActif.position.x * 100) / 100) === (Math.floor(tabCases.case10.x * 100) / 100)){
 		//compteurDeplacement = 0;
 		compteurDeplacement = 2;
-		hello.rotateY(-1.5);
+		pionActif.rotateY(-1.5);
 	}
 	// Route gauche (vers le haut)
-	if(compteurDeplacement === 2 && (Math.floor(hello.position.x * 100) / 100) === (Math.floor(tabCases.case20.x * 100) / 100) && hello.position.z != tabCases.case20.z){
-		hello.position.z -= 0.01;
+	if(compteurDeplacement === 2 && (Math.floor(pionActif.position.x * 100) / 100) === (Math.floor(tabCases.case20.x * 100) / 100) && pionActif.position.z != tabCases.case20.z){
+		pionActif.position.z -= 0.01;
 	}
-	if(compteurDeplacement === 2 && (Math.floor(hello.position.z * 100) / 100) === (Math.floor(tabCases.case20.z * 100) / 100)){
+	if(compteurDeplacement === 2 && (Math.floor(pionActif.position.z * 100) / 100) === (Math.floor(tabCases.case20.z * 100) / 100)){
 		compteurDeplacement = 3;
-		hello.rotateY(-1.5);
+		pionActif.rotateY(-1.5);
 	}
 
-	if(compteurDeplacement === 3 && (Math.floor(hello.position.x * 100) / 100) != (Math.floor(tabCases.case30.x * 100) / 100) && (Math.floor(hello.position.z * 100) / 100) === (Math.floor(tabCases.case30.z * 100) / 100)){
-		hello.position.x += 0.01;
+	if(compteurDeplacement === 3 && (Math.floor(pionActif.position.x * 100) / 100) != (Math.floor(tabCases.case30.x * 100) / 100) && (Math.floor(pionActif.position.z * 100) / 100) === (Math.floor(tabCases.case30.z * 100) / 100)){
+		pionActif.position.x += 0.01;
 	}
-	if(compteurDeplacement === 3 && (Math.floor(hello.position.x * 100) / 100) === (Math.floor(tabCases.case30.x * 100) / 100)){
+	if(compteurDeplacement === 3 && (Math.floor(pionActif.position.x * 100) / 100) === (Math.floor(tabCases.case30.x * 100) / 100)){
 		compteurDeplacement = 4;
-		hello.rotateY(-1.5);
+		pionActif.rotateY(-1.5);
 	}
   
 	// Route gauche (vers le haut)
-	if(compteurDeplacement === 4 && (Math.floor(hello.position.x * 100) / 100) === (Math.floor(tabCases.case0.x * 100) / 100) && hello.position.y === tabCases.case0.y && hello.position.z != tabCases.case0.z){
-		hello.position.z += 0.01;
+	if(compteurDeplacement === 4 && (Math.floor(pionActif.position.x * 100) / 100) === (Math.floor(tabCases.case0.x * 100) / 100) && pionActif.position.y === tabCases.case0.y && pionActif.position.z != tabCases.case0.z){
+		pionActif.position.z += 0.01;
 	}
-	if(compteurDeplacement === 4 && (Math.floor(hello.position.z * 100) / 100) === (Math.floor(tabCases.case0.z * 100) / 100)){
+	if(compteurDeplacement === 4 && (Math.floor(pionActif.position.z * 100) / 100) === (Math.floor(tabCases.case0.z * 100) / 100)){
 		compteurDeplacement = 0;
-		hello.rotateY(-1.8);
+		pionActif.rotateY(-1.8);
 	}
 	}
 }
