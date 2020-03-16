@@ -44,3 +44,172 @@ var tabCases = {
 , "case39"  : new THREE.Vector3(0.335*11.5,2,0.335*10) 
 
 } 
+
+
+function no(essai){
+	switch(essai){
+		case "case0":
+				return "case0";
+				break;
+
+		case "case1":
+				return "case1";
+				break;
+
+		case "case2":
+				return "case2";
+				break;
+
+		case "case3":
+				return "case3";
+				break;
+
+		case "case4":
+				return "case4";
+				break;
+
+		case "case5":
+                return "case5";
+                break;
+
+        case "case6":
+                return "case6";
+                break;
+                    
+        case "case7":
+                return "case7";
+                break;
+                        
+        case "case8":
+                return "case8";
+                break;
+                            
+        case "case9":
+                return "case9";
+                break;
+                                
+        case "case10":
+                return "case10";
+                break;
+                                    
+        case "case11":
+                return "case11";
+                break;
+                                        
+        case "case12":
+                return "case12";
+                break;
+                                            
+        case "case13":
+                return "case13";
+                break;
+                                                
+        case "case14":
+                return "case14";
+                break;
+                                                    
+        case "case15":
+                return "case15";
+                break;
+                                                        
+        case "case16":
+                return "case16";
+                break;
+                                                            
+        case "case17":
+                return "case17";
+                break;
+
+        case "case18":
+                return "case18";
+                break;
+
+        case "case19":
+                return "case19";
+                break;
+
+        case "case20":
+                return "case20";
+                break;
+
+        case "case21":
+                return "case21";
+                break;
+
+        case "case22":
+                return "case22";
+                break;
+
+        case "case23":
+                return "case23";
+                break;
+
+        case "case24":
+                return "case24";
+                break;
+
+        case "case25":
+                return "case25";
+                break;
+
+        case "case26":
+                return "case26";
+                break;
+
+        case "case27":
+                return "case27";
+                break;
+
+        case "case28":
+                return "case28";
+                break;
+
+        case "case29":
+                return "case29";
+                break;
+
+        case "case30":
+                return "case30";
+                break;
+
+        case "case31":
+                return "case31";
+                break;
+
+        case "case32":
+                return "case32";
+                break;
+
+        case "case33":
+                return "case33";
+                break;
+
+        case "case34":
+                return "case34";
+                break;
+
+        case "case35":
+                return "case35";
+                break;
+
+        case "case36":
+                return "case36";
+                break;
+
+        case "case37":
+                return "case37";
+                break;
+
+        case "case38":
+                return "case38";
+                break;
+
+        case "case39":
+                return "case39";
+                break;
+
+        case "case39":
+                return "case39";
+                break;
+	}
+}
