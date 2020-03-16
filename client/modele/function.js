@@ -58,7 +58,7 @@ function render() {
 	renderer.render(scene, camera);
   };
 
-  
+
 function supprimerMaison(maisonPropriete){
 	scene.remove(window[maisonPropriete]);
 }
@@ -111,7 +111,7 @@ for(var i = 0; i < 40; i++){
 };
 
 
-function loaderPion(pion, _callback){
+function loaderPion(pion, casesFunc,_callback){
 	var load = new THREE.GLTFLoader();
 	load.load('/Pions/'+pion+'.gltf', (gltf) => {
 	  const root = gltf.scene;
@@ -122,6 +122,7 @@ function loaderPion(pion, _callback){
 	  root.rotateY(-1.6);
 	  scene.add(root);
 	  if (_callback){
+		varDeplacement = casesFunc;
 		pionActif = pion;
 		_callback();
 	  }
@@ -150,10 +151,10 @@ function loaderHotelPro(hotelPropriete){
 
 
 var compteurDeplacement = 0;
-function deplacement(pionActif, deplaCase){
+function deplacement(pionActif, varDeplacement){
 	if(compteurDeplacement === 0){
 		compteurDeplacement = 1;
-		varDeplacement = deplaCase;
+		varDeplacement = varDeplacement;
 	}
 	//console.log(tabCases["case10"])
 	//console.log(tabCases[no()]);
