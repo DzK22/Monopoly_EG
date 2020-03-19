@@ -50,7 +50,8 @@ function getRenderer () {
 	renderer.gammaFactor = 2.2;
 
 	//On ajoute l'objet à la page html
-	document.body.appendChild(renderer.domElement);
+	var element = document.getElementsByClassName(board-container);
+	element.appendChild(renderer.domElement);
 	return renderer;
 }
 
